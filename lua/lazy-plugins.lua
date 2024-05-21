@@ -15,7 +15,8 @@ require('lazy').setup({
 
   'mg979/vim-visual-multi',
 
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
+  require 'plugins.supermaven',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -63,7 +64,7 @@ require('lazy').setup({
 
   require 'plugins.noice',
 
-  -- require 'kickstart.plugins.debug',
+  require 'plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 

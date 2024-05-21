@@ -26,6 +26,7 @@ return {
             leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           },
           use_libuv_file_watcher = true,
+          group_empty_dirs = true,
         },
       }
     end,
