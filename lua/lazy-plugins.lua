@@ -67,6 +67,8 @@ require('lazy').setup({
   require 'plugins.debug',
 
   require 'plugins.refactoring',
+
+  require 'plugins.trouble',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
