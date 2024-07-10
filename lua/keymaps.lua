@@ -33,22 +33,8 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Toggle tree like in IDE
--- vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<cr>', { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>nt', ':Neotree toggle<cr>', { silent = true, noremap = true })
 --
--- local function nvim_tree_on_attach(bufnr)
---   local api = require 'nvim-tree.api'
---
---   local function opts(desc)
---     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
---   end
---
---   -- default mappings
---   api.config.mappings.default_on_attach(bufnr)
---
---   -- custom mappings
---   vim.keymap.set('n', 't', api.node.open.tab, opts 'Open new tab')
---   vim.keymap.set('n', 'v', api.node.open.vertical, opts 'Open new vertically')
--- end
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -63,5 +49,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Neotest keymaps
+vim.keymap.set('n', '<leader>tt', function()
+  require('neotest').run.run(vim.fn.expand '%')
+end, { desc = 'Run test file' })
+vim.keymap.set('n', '<leader>tr', function()
+  require('neotest').run.run()
+end, { desc = 'Run nearest test' })
+vim.keymap.set('n', '<leader>tD', function()
+  require('jdtls.dap').test_class()
+end, { desc = 'Debug test file' })
+vim.keymap.set('n', '<leader>td', function()
+  require('jdtls.dap').test_nearest_method()
+end, { desc = 'Debug nearest test' })
 
 -- vim: ts=2 sts=2 sw=2 et
