@@ -50,18 +50,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Neotest keymaps
-vim.keymap.set('n', '<leader>tt', function()
-  require('neotest').run.run(vim.fn.expand '%')
-end, { desc = 'Run test file' })
-vim.keymap.set('n', '<leader>tr', function()
-  require('neotest').run.run()
-end, { desc = 'Run nearest test' })
-vim.keymap.set('n', '<leader>tD', function()
-  require('jdtls.dap').test_class()
-end, { desc = 'Debug test file' })
-vim.keymap.set('n', '<leader>td', function()
-  require('jdtls.dap').test_nearest_method()
-end, { desc = 'Debug nearest test' })
-
 -- vim: ts=2 sts=2 sw=2 et

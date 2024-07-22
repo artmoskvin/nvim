@@ -74,7 +74,7 @@ require('lazy').setup({
   require 'plugins.markdown-preview',
 
   -- Disabling because it's not working
-  -- require 'plugins.neotest',
+  require 'plugins.neotest',
 
   require 'plugins.codesnap',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
