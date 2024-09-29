@@ -6,6 +6,7 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'nvim-java/nvim-java',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -140,13 +141,13 @@ return {
         -- clangd = {},
         gopls = {},
         pyright = {},
-        jdtls = {
-          cmd = {
-            'jdtls',
-            -- TODO: use env vars for getting the Home and Mason paths
-            '--jvm-arg=' .. string.format('-javaagent:%s', '/Users/artemm/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
-          },
-        },
+        -- jdtls = {
+        --   cmd = {
+        --     'jdtls',
+        --     -- TODO: use env vars for getting the Home and Mason paths
+        --     '--jvm-arg=' .. string.format('-javaagent:%s', '/Users/artemm/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
+        --   },
+        -- },
         -- java_language_server = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -199,6 +200,21 @@ return {
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+          end,
+          jdtls = function()
+            require('java').setup {
+              -- Your custom jdtls settings goes here
+              -- format = {
+              --   settings = {
+              --     url = 'https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml',
+              --     profile = 'GoogleStyle',
+              --   },
+              -- },
+            }
+
+            require('lspconfig').jdtls.setup {
+              -- Your custom nvim-java configuration goes here
+            }
           end,
         },
       }

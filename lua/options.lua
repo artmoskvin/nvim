@@ -11,7 +11,7 @@ vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
-vim.opt.mousescroll = { 'ver:1', 'hor:6' }
+vim.opt.mousescroll = { 'ver:1', 'hor:1' }
 
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
@@ -70,5 +70,7 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 
 vim.opt.jumpoptions = 'stack'
+
+vim.api.nvim_create_autocmd({ 'FocusLost', 'ModeChanged', 'TextChanged', 'BufEnter' }, { desc = 'autosave', pattern = '*', command = 'silent! update' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
