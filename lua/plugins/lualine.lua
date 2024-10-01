@@ -29,9 +29,12 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
+          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0 } },
           {
             'filename',
             path = 1,
+            padding = { left = 0 },
+            separator = '',
           },
         },
         lualine_x = {},

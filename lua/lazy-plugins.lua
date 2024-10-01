@@ -49,6 +49,9 @@ require('lazy').setup({
   -- require 'themes.nordic',
   require 'themes.dracula',
   -- require 'themes.catpuccin',
+  require 'themes.flow',
+  require 'themes.patana',
+  require 'themes.cyberdream',
 
   require 'plugins.todo-comments',
 
@@ -75,6 +78,10 @@ require('lazy').setup({
   require 'plugins.codesnap',
 
   require 'plugins.nvim-metals',
+
+  require 'plugins.hardtime',
+
+  require 'plugins.tiny-inline-diag',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --

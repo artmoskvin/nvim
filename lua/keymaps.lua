@@ -36,6 +36,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>nt', ':Neotree toggle<cr>', { silent = true, noremap = true })
 --
 
+-- Toggle hardtime
+vim.keymap.set('n', '<leader>ht', ':Hardtime toggle<cr>', { silent = true, noremap = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

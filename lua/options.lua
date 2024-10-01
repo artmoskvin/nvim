@@ -72,5 +72,8 @@ vim.opt.foldlevel = 99
 vim.opt.jumpoptions = 'stack'
 
 vim.api.nvim_create_autocmd({ 'FocusLost', 'ModeChanged', 'TextChanged', 'BufEnter' }, { desc = 'autosave', pattern = '*', command = 'silent! update' })
+
+-- Do not show diagnostics because of tiny-inline-diagnostic
+vim.diagnostic.config({ virtual_text = false })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
