@@ -44,14 +44,10 @@ require('lazy').setup({
 
   require 'plugins.cmp',
 
-  -- require 'themes.rose-pine',
-  -- require 'themes.tokyonight',
-  -- require 'themes.nordic',
-  require 'themes.dracula',
-  -- require 'themes.catpuccin',
-  require 'themes.flow',
-  require 'themes.patana',
-  require 'themes.cyberdream',
+  -- require 'themes.dracula',
+  -- require 'themes.flow',
+  -- require 'themes.patana',
+  require 'themes.poimandres',
 
   require 'plugins.todo-comments',
 

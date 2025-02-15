@@ -19,7 +19,9 @@ return {
             { find = '%d+L, %d+B' },
             { find = '; after #%d+' },
             { find = '; before #%d+' },
-            { find = 'Supermaven Pro is running'},
+            { find = 'Supermaven Pro is running' },
+            { find = '%d more lines' },
+            { find = '%d lines yanked' },
           },
         },
         opts = { skip = true },
@@ -40,6 +42,6 @@ return {
     -- OPTIONAL:
     --   `nvim-notify` is only needed, if you want to use the notification view.
     --   If not available, we use `mini` as the fallback
-    'rcarriga/nvim-notify',
+    { 'rcarriga/nvim-notify', opts = { background_colour = '#0e0e0e' } },
   },
 }

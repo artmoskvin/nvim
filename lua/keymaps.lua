@@ -53,4 +53,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Copy the current file path to the system clipboard
+vim.keymap.set('n', '<leader>cp', function()
+    local filepath = vim.fn.expand("%:p")
+    vim.fn.setreg('+', filepath)
+    vim.notify('Copied ' .. filepath .. ' to clipboard', vim.log.levels.INFO)
+end, { desc = 'Copy current file path to system clipboard' })
 -- vim: ts=2 sts=2 sw=2 et

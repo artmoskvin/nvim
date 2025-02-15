@@ -4,7 +4,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
-        theme = 'dracula-nvim',
+        theme = 'poimandres',
         section_separators = '',
         component_separators = '|',
         globalstatus = true,

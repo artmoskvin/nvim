@@ -9,8 +9,6 @@ return {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     config = function()
-      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#282A36' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#282A36' })
       require('neo-tree').setup {
         sources = {
           'filesystem',
